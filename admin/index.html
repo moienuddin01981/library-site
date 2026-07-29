@@ -1,0 +1,98 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+backend:
+  name: github
+  repo: moienuddin01981/library-site
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+locale: "en"
+
+collections:
+  - name: "settings"
+    label: "সাইট সেটিংস"
+    files:
+      - name: "general"
+        label: "হোম পেজ ও সাধারণ সেটিংস"
+        file: "content/settings.json"
+        fields:
+          - {label: "লাইব্রেরির নাম (মেনুতে)", name: "brand_name", widget: "string"}
+          - {label: "হিরো — ছোট লেবেল", name: "hero_eyebrow", widget: "string"}
+          - {label: "হিরো — বড় শিরোনাম", name: "hero_title", widget: "string"}
+          - {label: "হিরো — সাবটাইটেল", name: "hero_subtitle", widget: "string"}
+          - {label: "বাটন ১ লেখা", name: "hero_button1_text", widget: "string"}
+          - {label: "বাটন ২ লেখা", name: "hero_button2_text", widget: "string"}
+          - {label: "রং — সবুজ (Green)", name: "color_green", widget: "color"}
+          - {label: "রং — কাঠের বাদামি (Wood)", name: "color_wood", widget: "color"}
+          - {label: "রং — সোনালি (Gold)", name: "color_gold", widget: "color"}
+          - {label: "আমার সম্পর্কে — শিরোনাম", name: "about_heading", widget: "string"}
+          - {label: "আমার সম্পর্কে — অনুচ্ছেদ ১", name: "about_body1", widget: "text"}
+          - {label: "আমার সম্পর্কে — অনুচ্ছেদ ২", name: "about_body2", widget: "text"}
+          - {label: "প্রিয় বই (কমা দিয়ে লিখুন)", name: "about_favorites", widget: "string"}
+          - {label: "প্রোফাইল ছবি", name: "about_photo", widget: "image", required: false}
+          - {label: "ইমেইল", name: "contact_email", widget: "string"}
+          - {label: "হোয়াটসঅ্যাপ নাম্বার (দেশের কোডসহ, যেমন 8801XXXXXXXXX)", name: "contact_whatsapp", widget: "string"}
+          - {label: "ফেসবুক লিংক", name: "contact_facebook", widget: "string"}
+          - {label: "মানচিত্রের অবস্থান (শহরের নাম)", name: "contact_map_location", widget: "string"}
+          - {label: "ফুটার লেখা", name: "footer_text", widget: "string"}
+          - {label: "মোট বই (সংখ্যা)", name: "stat_total_books", widget: "number"}
+          - {label: "মোট লেখক (সংখ্যা)", name: "stat_total_authors", widget: "number"}
+          - {label: "মোট বিভাগ (সংখ্যা)", name: "stat_total_categories", widget: "number"}
+          - {label: "নতুন যুক্ত হওয়া বই (সংখ্যা)", name: "stat_new_books", widget: "number"}
+
+  - name: "books"
+    label: "বইসমূহ"
+    files:
+      - name: "all_books"
+        label: "সব বই"
+        file: "content/books.json"
+        fields:
+          - name: "items"
+            label: "বই"
+            widget: "list"
+            summary: "{{title}} — {{author}}"
+            fields:
+              - {label: "বইয়ের নাম", name: "title", widget: "string"}
+              - {label: "লেখকের নাম", name: "author", widget: "string"}
+              - label: "বিভাগ"
+                name: "category"
+                widget: "select"
+                options: ["ইসলামিক","কুরআন","হাদিস","তাফসীর","ফিকহ","বাংলা সাহিত্য","ইংরেজি বই","ইতিহাস","জীবনী","বিজ্ঞান","প্রযুক্তি","শিশু-কিশোর"]
+              - {label: "প্রকাশের বছর", name: "year", widget: "number"}
+              - {label: "রেটিং (০ থেকে ৫)", name: "rating", widget: "number", value_type: "float", min: 0, max: 5}
+              - {label: "সংক্ষিপ্ত বিবরণ", name: "description", widget: "text"}
+              - {label: "বইয়ের প্রচ্ছদ ছবি", name: "cover_image", widget: "image", required: false}
+              - {label: "PDF ফাইল", name: "pdf_file", widget: "file", required: false}
+
+  - name: "blog"
+    label: "ব্লগ"
+    files:
+      - name: "all_posts"
+        label: "সব পোস্ট"
+        file: "content/blog.json"
+        fields:
+          - name: "items"
+            label: "পোস্ট"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - {label: "ট্যাগ (যেমন: বইয়ের রিভিউ)", name: "tag", widget: "string"}
+              - {label: "ইমোজি আইকন", name: "icon", widget: "string"}
+              - {label: "শিরোনাম", name: "title", widget: "string"}
+              - {label: "সংক্ষিপ্ত বিবরণ", name: "excerpt", widget: "text"}
+
+  - name: "gallery"
+    label: "গ্যালারি"
+    files:
+      - name: "all_photos"
+        label: "সব ছবি"
+        file: "content/gallery.json"
+        fields:
+          - name: "items"
+            label: "ছবি"
+            widget: "list"
+            summary: "{{caption}}"
+            fields:
+              - {label: "ক্যাপশন", name: "caption", widget: "string"}
+              - {label: "ছবি", name: "image", widget: "image", required: false}
