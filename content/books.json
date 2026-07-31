@@ -109,6 +109,16 @@
       "description": "আত্মশুদ্ধির বিবরণের বই।",
       "cover_image": "/uploads/1000018351.jpg",
       "pdf_file": "/uploads/subhe sadik.pdf"
+    },
+    {
+      "title": "ফাইজুল মুনহিম",
+      "author": "তহহ",
+      "category": "হাদিস",
+      "year": 2029,
+      "rating": 4.5,
+      "description": "তওজগএ",
+      "cover_image": "/uploads/1000018358.jpg",
+      "pdf_file": "/uploads/D-Fayjul-hadi-shorhe-tirmiji-sani[Almodina.com].pdf"
     }
   ]
 }
