@@ -107,8 +107,8 @@
       "year": 2010,
       "rating": 4.5,
       "description": "আত্মশুদ্ধির বিবরণের বই।",
-      "cover_image": "/uploads/1000018351.jpg",
-      "pdf_file": "/uploads/subhe sadik.pdf"
+      "cover_image": "/library-site/uploads/1000018351.jpg",
+      "pdf_file": "/library-site/uploads/subhe sadik.pdf"
     },
     {
       "title": "ফাইজুল মুনহিম",
@@ -119,16 +119,6 @@
       "description": "তওজগএ",
       "cover_image": "/uploads/1000018358.jpg",
       "pdf_file": "/uploads/D-Fayjul-hadi-shorhe-tirmiji-sani[Almodina.com].pdf"
-    },
-    {
-      "title": "সুবহে সাদিক",
-      "author": "রতত",
-      "category": "ইসলামিক",
-      "year": 2020,
-      "rating": 0.5,
-      "description": "চগিও",
-      "cover_image": "/uploads/1000018351.jpg",
-      "pdf_file": "/uploads/subhe sadik.pdf"
     }
   ]
 }
